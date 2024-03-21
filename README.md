@@ -28,6 +28,7 @@ Carácter
 Booleano
 - boolean: representa dos valores: true y false.
    - ejemplo: boolean verdadero = true;
+     
 Declaraciones de Arrays
 - ejemplos:
    - int[] numeros = {1, 2, 3};
