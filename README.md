@@ -34,3 +34,10 @@
    - int[] numeros = {1, 2, 3};
    - String[] nombres = {"Ana", "Luis", "Carlos"};
    - boolean[] valores = {true, false, true};
+   - byte[] byteArray = {10, 20, 30, 40, 50};
+   - short[] shortArray = {1000, 2000, 3000, 4000, 5000};
+   - long[] longArray = {10000000000L, 20000000000L, 30000000000L, 40000000000L, 50000000000L};
+   - float[] floatArray = {1.2f, 3.4f, 5.6f, 7.8f, 9.0f};
+   - double[] doubleArray = {1.23, 4.56, 7.89, 0.12, 3.45};
+   - char[] charArray = {'H', 'o', 'l', 'a', '!'};
+   - boolean[] booleanArray = {true, false, true, false, true};
