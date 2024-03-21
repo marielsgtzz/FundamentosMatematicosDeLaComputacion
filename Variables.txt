@@ -48,5 +48,3 @@ byte[] nivelesAcceso = {1, 2, 3, 4, 5};
 short[] codigosError = {404, 500, 403, 401, 400};
 long[] poblacionCiudades = {1000000L, 500000L, 2000000L, 750000L, 300000L};
 float[] notas = {7.5f, 9.0f, 6.3f, 8.4f, 5.8f};
-
-
