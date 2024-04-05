@@ -23,6 +23,12 @@ La salida del programa contiene los siguientes datos:
 - Clasificación de todos los nombres de variables por tipo declarado.
 - El formato de la salida es ###
 
+## Uso del proyecto
+
+1. Correr el programa [codigo.py](codigo.py)
+2. Abrir la carpeta `FundamentosMatematicosDeLaComputacion`
+3. Seleccionar el archivo [Variables.txt](Variables.txt)
+
 ### Tipos de variables en Java
 
 #### Tipos Numéricos
