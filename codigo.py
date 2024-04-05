@@ -6,11 +6,11 @@ import re
 
 def leer_archivo_en_lista(ruta):
     """
-    Lee un archivo de texto y devuelve una lista de sus líneas, eliminando los espacios en blanco al inicio y al final de cada una.
-    
-    Parámetros: ruta (La ruta del archivo a leer).
-    
-    Retorna: Una lista de cadenas, cada una correspondiente a una línea del archivo.
+    Esta función abre un archivo de texto y devuelve sus líneas como una lista.
+    Se eliminan los espacios en blanco al inicio y al final de cada una.
+
+    @param: ruta (La ruta del archivo a leer)
+    @return: Lista de String que es el txt en formato de lista. Cada elem corresponde a una línea del archivo.
     """
     try:
         with open(ruta, 'r') as archivo:
@@ -22,10 +22,10 @@ def leer_archivo_en_lista(ruta):
 
 def seleccionar_archivo():
     """
-    Abre una ventana de diálogo para que el usuario seleccione un archivo. Utiliza la interfaz gráfica de tkinter.
+    Abre una ventana de diálogo para que el usuario seleccione un archivo. 
+    Se utiliza la interfaz gráfica de tkinter.
     
-    Retorna:
-    - La ruta del archivo seleccionado por el usuario.
+    @returns: La ruta del archivo seleccionado por el usuario.
     """
     root = tk.Tk()
     root.withdraw()  # Oculta la ventana principal de tkinter
@@ -35,13 +35,13 @@ def seleccionar_archivo():
 
 def buscar_tipos(variables):
     """
-    Analiza las líneas de texto proporcionadas buscando declaraciones de variables, identificando su tipo, si están inicializadas,
+    Utiliza expresiones regulares para encontrar declaraciones de variables y recopilar estadísticas.
+    Analiza las líneas de texto proporcionadas buscando declaraciones de variables, identifica su tipo, si están inicializadas,
     si son arreglos y si son declaraciones constantes.
     
-    Parámetros:
-    - variables: Lista de líneas de texto a analizar.
+    @params: lista variables: Lista de líneas de texto a analizar.
     
-    Retorna:
+    @returns:
     - Un diccionario con los tipos de variables como claves y las variables correspondientes como valores.
     - El total de nombres de variables únicos encontrados.
     - El número total de variables inicializadas.
@@ -98,12 +98,14 @@ def imprimir_estadisticas(resultados, total_variables, total_inicializadas, tota
     Imprime estadísticas sobre las variables encontradas en el análisis, incluyendo el total de variables, el total por tipo,
     cuántas están inicializadas, cuántas son arreglos y cuántas son constantes.
     
-    Parámetros:
+    @params:
     - resultados: Diccionario con los tipos de variables y las variables correspondientes.
     - total_variables: Número total de variables encontradas.
     - total_inicializadas: Número total de variables inicializadas.
     - total_arreglos: Número total de variables de tipo arreglo.
     - total_constantes: Número total de declaraciones constantes.
+
+    FALTA clasificar los nombres de las variables por tipo.
     """
     print(f"Numero total de variables declaradas: {total_variables}")
     print(f"Numero total de tipos utilizados en las declaraciones encontradas: {len(resultados)}")
