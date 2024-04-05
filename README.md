@@ -6,22 +6,24 @@ El programa lee datos de entrada, una serie de declaraciones de variables y arro
 
 ## Especificaciones
 
-El programa lee los datos de entrada de un archivo, el cual se le pasa por medio de la línea de comandos o se carga por medio de una ventana de dialogo de abrir archivo.
+✅ El programa lee los datos de entrada de un archivo, el cual se le pasa por medio de la línea de comandos o se carga por medio de una ventana de dialogo de abrir archivo.
 
 El programa utiliza expresiones regulares para realizar el análisis de la entrada.
 
-El programa reconoce todos los tipos de declaraciones de variables del lenguaje Java, al menos en su versión 1.8 (SE 8).
+El programa reconoce todos los tipos de declaraciones de variables del lenguaje Java, al menos en su versión 1.8 (SE 8). Los tipos de declaraciones se confirman en la sección `Tipos de variables en Java` de este mismo documento.
 
 La salida del programa contiene los siguientes datos:
 
-- Numero total de variables declaradas.
-- Numero total de tipos utilizados en las declaraciones encontradas.
-- Numero total de variables declaradas de cada tipo.
-- Numero total de variables inicializadas.
-- Numero total de variables de tipo arreglo.
-- Número total de declaraciones constantes (es decir, el valor no se puede cambiar después de la inicialización).
+- ✅ Numero total de variables declaradas.
+- ✅ Numero total de tipos utilizados en las declaraciones encontradas.
+- ✅ Numero total de variables declaradas de cada tipo.
+- ✅ Numero total de variables inicializadas.
+- ✅ Numero total de variables de tipo arreglo.
+- ✅ Numero total de declaraciones constantes (es decir, el valor no se puede cambiar después de la inicialización).
 - Clasificación de todos los nombres de variables por tipo declarado.
 - El formato de la salida es ###
+
+![Req1](imgs/Req1.gif)
 
 ## Uso del proyecto
 
