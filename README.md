@@ -23,13 +23,15 @@ La salida del programa contiene los siguientes datos:
 - Clasificación de todos los nombres de variables por tipo declarado.
 - El formato de la salida es ###
 
-![Req1](imgs/Req1.gif)
+![DemostracionProyecto](imgs/Prueba.gif)
 
 ## Uso del proyecto
 
 1. Correr el programa [codigo.py](codigo.py)
 2. Abrir la carpeta `FundamentosMatematicosDeLaComputacion`
 3. Seleccionar el archivo [Variables.txt](Variables.txt)
+
+Esta es una opción básica para probar el programa, si se quiere probar con otro archivo de texto solo es cuestión de seleccionar ese.
 
 ### Tipos de variables en Java
 

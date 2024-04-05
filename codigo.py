@@ -104,23 +104,24 @@ def imprimir_estadisticas(resultados, total_variables, total_inicializadas, tota
     - total_inicializadas: Número total de variables inicializadas.
     - total_arreglos: Número total de variables de tipo arreglo.
     - total_constantes: Número total de declaraciones constantes.
-
-    FALTA clasificar los nombres de las variables por tipo.
     """
-    print(f"Numero total de variables declaradas: {total_variables}")
-    print(f"Numero total de tipos utilizados en las declaraciones encontradas: {len(resultados)}")
+    print(f"\nNumero total de variables declaradas: {total_variables}")
+    print(f"Numero total de tipos utilizados en las declaraciones encontradas: {len(resultados)} \n")
     for tipo, variables in resultados.items():
         print(f"Numero total de variables declaradas de tipo {tipo}: {len(variables)}")
-    print(f"Numero total de variables inicializadas: {total_inicializadas}")
-    print(f"Numero total de variables de tipo arreglo: {total_arreglos}")
-    print(f"Número total de declaraciones constantes: {total_constantes}")
-
-
+        # Aquí clasificamos e imprimimos los nombres de las variables por tipo declarado
+        print(f"Variables de tipo {tipo}: {', '.join(variables)}\n")
+    print(f"Numero total de variables inicializadas: {total_inicializadas}\n")
+    print(f"Numero total de variables de tipo arreglo: {total_arreglos}\n")
+    print(f"Número total de declaraciones constantes: {total_constantes}\n")
 
 def main():
     """
-    Función principal que inicia la selección de archivo, la lectura de su contenido, el análisis de las variables declaradas
-    y la impresión de estadísticas relevantes sobre ellas.
+    Función principal que llama al resto de las funciones:
+    1. Inicia la selección de archivo
+    2. Lee el contenido del archivo 
+    3. Analiza las variables declaradas
+    4. Imprime las estadísticas relevantes sobre las variables
     """
     variables = []
     if len(sys.argv) > 1:
