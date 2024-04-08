@@ -47,6 +47,64 @@ Número total de declaraciones constantes:
 
 Esta es una opción básica para probar el programa, si se quiere probar con otro archivo de texto solo es cuestión de seleccionar ese.
 
+### Ejemplo al correr el proyecto con el archivo Variables.txt
+Numero total de variables declaradas: 49
+Numero total de tipos utilizados en las declaraciones encontradas: 16 
+
+Numero total de variables declaradas de tipo int: 5
+Variables de tipo int: edad, temperatura, distancia, altura, puntos
+
+Numero total de variables declaradas de tipo double: 5
+Variables de tipo double: temperaturaMedia, alturaMontaña, profundidadOceano, distanciaEstrellas, salario
+
+Numero total de variables declaradas de tipo byte: 5
+Variables de tipo byte: nivel, edadPerro, temperaturaSala, diasMes, capasOzono
+
+Numero total de variables declaradas de tipo short: 5
+Variables de tipo short: poblacionCiudad, capacidadEstadio, nivelMar, añoNacimiento, peso
+
+Numero total de variables declaradas de tipo long: 5
+Variables de tipo long: distanciaLuna, poblacionMundial, presupuestoGobierno, numeroEstrellas, galaxiasUniverso
+
+Numero total de variables declaradas de tipo float: 5
+Variables de tipo float: pi, temperaturaCuerpo, velocidadLuz, masaElectron, cargaElectron
+
+Numero total de variables declaradas de tipo char: 5
+Variables de tipo char: letraFinal, inicial, simboloEuro, signoPregunta, nuevaLinea
+
+Numero total de variables declaradas de tipo boolean: 5
+Variables de tipo boolean: contieneGluten, esBisiesto, tieneCarnet, esMayorDeEdad, semaforoRojo
+
+Numero total de variables declaradas de tipo int[]: 1
+Variables de tipo int[]: años
+
+Numero total de variables declaradas de tipo double[]: 1
+Variables de tipo double[]: medidas
+
+Numero total de variables declaradas de tipo byte[]: 1
+Variables de tipo byte[]: nivelesAcceso
+
+Numero total de variables declaradas de tipo short[]: 1
+Variables de tipo short[]: codigosError
+
+Numero total de variables declaradas de tipo long[]: 1
+Variables de tipo long[]: poblacionCiudades
+
+Numero total de variables declaradas de tipo float[]: 1
+Variables de tipo float[]: notas
+
+Numero total de variables declaradas de tipo char[]: 1
+Variables de tipo char[]: vocales
+
+Numero total de variables declaradas de tipo boolean[]: 2
+Variables de tipo boolean[]: diasLaborales, respuestasExamen
+
+Numero total de variables inicializadas: 49
+
+Numero total de variables de tipo arreglo: 9
+
+Número total de declaraciones constantes: 0
+
 ### Tipos de variables en Java
 
 #### Tipos Numéricos
@@ -96,3 +154,29 @@ Esta es una opción básica para probar el programa, si se quiere probar con otr
   - double[] doubleArray = {1.23, 4.56, 7.89, 0.12, 3.45};
   - char[] charArray = {'H', 'o', 'l', 'a', '!'};
   - boolean[] booleanArray = {true, false, true, false, true};
+
+## Problemas Conocidos
+
+### Análisis Léxico
+El primer desafío es dividir la entrada de texto en unidades, lo cual implica identificar palabras clave, identificadores (nombres de variables), tipos de datos, operadores y otros elementos sintácticos. Los lenguajes de programación suelen tener reglas específicas para estas unidades, como nombres de variables que no pueden comenzar con números o el uso de ciertos caracteres especiales.
+
+### Análisis Sintáctico
+Una vez identificadas las unidades, el siguiente paso es analizar la estructura de las declaraciones de variables para asegurarse de que siguen la gramática del lenguaje. Esto implica reconocer patrones y manejar correctamente declaraciones más complejas que pueden incluir inicializaciones, arreglos o estructuras.
+
+### Ambigüedades en la Gramática
+Algunas gramáticas pueden ser ambiguas, lo que significa que una secuencia de unidades puede interpretarse de más de una manera. Resolver estas ambigüedades para asegurar que el análisis sintáctico es correcto puede ser complicado.
+
+### Manejo de Errores
+Identificar y reportar errores de manera informativa es crucial. Esto incluye errores léxicos (por ejemplo, caracteres no válidos), errores sintácticos (declaraciones mal formadas) y posiblemente errores semánticos (por ejemplo, uso de un tipo de dato no declarado).
+
+### Variabilidad entre Lenguajes de Programación
+Los lenguajes de programación pueden variar significativamente en cuanto a sintaxis y semántica. Un reconocedor que funciona para un lenguaje puede necesitar ajustes significativos para trabajar con otro, especialmente si los lenguajes difieren en cómo se declaran las variables, se especifican los tipos o se organizan las declaraciones.
+
+### Análisis Semántico
+Además del análisis léxico y sintáctico, puede ser necesario un análisis semántico para recopilar estadísticas útiles. Esto podría incluir determinar si hay declaraciones duplicadas o si los tipos de las variables son consistentes a través del código.
+
+### Eficiencia y Escalabilidad
+El reconocedor debe ser lo suficientemente eficiente como para manejar grandes volúmenes de datos de entrada sin consumir recursos excesivos ni tardar demasiado tiempo.
+
+### Interfaz de Usuario y Presentación de Resultados
+Presentar los resultados de manera clara y útil para el usuario final, especialmente si se pretende ofrecer estadísticas complejas o análisis detallados, puede ser un desafío en sí mismo.
