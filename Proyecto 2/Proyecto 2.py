@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-import tkinter as tk
-from tkinter import filedialog
-import re
+import tkinter as tk # Importa el módulo tkinter para la interfaz gráfica
+from tkinter import filedialog # Importa filedialog para el diálogo de selección de archivos
+import re # Importa el módulo de expresiones regulares
 
 def seleccionar_archivo():
     """
     Crea una ventana oculta de Tkinter para seleccionar un archivo y devuelve la ruta del archivo seleccionado.
     """
-    root = tk.Tk()
+    root = tk.Tk() # Crea una nueva ventana de Tkinter
     root.withdraw()  # Oculta la ventana principal de tkinter
     ruta_archivo = filedialog.askopenfilename()  # Muestra el diálogo para seleccionar archivo
     root.destroy()  # Cierra la ventana de tkinter
@@ -20,7 +20,7 @@ def leer_archivo_en_lista(ruta):
     """
     try:
         with open(ruta, 'r') as archivo:
-            content = archivo.read()
+            content = archivo.read() # Lee todo el contenido del archivo
         return content
     except Exception as e:
         print(f"Error al leer el archivo: {e}")
@@ -30,9 +30,9 @@ def tokenizar_contenido(content):
     """
     Tokeniza el contenido del archivo utilizando una expresión regular y devuelve una lista de tokens.
     """
-    token_regex = re.compile(r"while|\(|\)|\{|\}|[a-z]|[0-9]|==|!=|<=|>=|<|>")
-    tokens = token_regex.findall(content)
-    return tokens
+    token_regex = re.compile(r"while|\(|\)|\{|\}|[a-z]|[0-9]|==|!=|<=|>=|<|>")  # Define la expresión regular para los tokens
+    tokens = token_regex.findall(content) # Encuentra todos los tokens que coinciden
+    return tokens #da la lista de tokens
 
 def validar_whiles(tokens):
     """
@@ -60,11 +60,11 @@ def validar_whiles(tokens):
     while i < len(tokens):
         token = tokens[i]
 
-        if token == "while":
-            stack.append(token)
+        if token == "while": 
+            stack.append(token) #si el token es while, lo añadimos a la pila
             whiles += 1
         elif token == "{":
-            stack.append(token)
+            stack.append(token) #añade { a la pila
         elif token == "}":
             if len(stack) > 1 and stack[-1] == "{" and stack[-2] == "while":
                 stack.pop()  # Eliminar el corchete de apertura
@@ -72,7 +72,7 @@ def validar_whiles(tokens):
             else:
                 return (False, 0, 0, 0)  # Estructura inválida
         elif token == "(":
-            stack.append(token)
+            stack.append(token) #añade ( a la pila
         elif token == ")":
             if len(stack) > 0 and stack[-1] == "(":
                 stack.pop()
@@ -80,13 +80,14 @@ def validar_whiles(tokens):
                 return (False, 0, 0, 0)  # Estructura inválida
         else:
             # Validar la estructura del condicional del 'while'
-            if not re.match(r"[a-z]|[0-9]|==|!=|<=|>=|<|>", token):
+            if not re.match(r"[a-z]|[0-9]|==|!=|<=|>=|<|>", token): # si el token no es ninguno de los smbolos estructurales de un while
                 return (False, 0, 0, 0)  # Token inválido
             if len(stack) > 0 and stack[-1] == "while":
+                # si la pila no esta vacía y el último elemento es un while, empezamos a verificar
                 if (len(stack) == 1 and len(tokens) > i + 2 and 
-                    re.match(r"^[a-z]$", token) and 
-                    re.match(r"^[0-9]$", tokens[i + 2]) and 
-                    tokens[i + 1] in ("<", ">", "==", ">=", "<=", "!=")):
+                    re.match(r"^[a-z]$", token) and  # El primer token de la condición debe ser una variable (una letra)
+                    re.match(r"^[0-9]$", tokens[i + 2]) and # El tercer token de la condición debe ser un número
+                    tokens[i + 1] in ("<", ">", "==", ">=", "<=", "!=")):  # El segundo token debe ser un operador de comparación
                     i += 2  # Saltar sobre el condicional del 'while'
                 else:
                     return (False, 0, 0, 0)  # Condicional inválido
