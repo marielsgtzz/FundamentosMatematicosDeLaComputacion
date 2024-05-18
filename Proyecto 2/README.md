@@ -7,7 +7,11 @@ Este programa está diseñado para validar la correcta estructura y sintaxis de 
 Muchos errores en la programación provienen de estructuras de control mal formadas, especialmente en los ciclos `while`. Este programa ayuda a identificar errores comunes como paréntesis desequilibrados, condiciones mal formadas y la falta de coherencia en las declaraciones dentro de ellos. 
 
 ## Cómo Ejecutar
-Para ejecutar este programa, primero es necesario tener Python instalado en el sistema. No se requieren bibliotecas externas. Posteriormente seguir estos pasos:
+Para ejecutar este programa, primero es necesario tener Python instalado en el sistema. Además, se requiere la biblioteca tkinter, que generalmente viene preinstalada con Python. Si no se tiene, se puede instalar con este comando:
+   ```
+   sudo apt-get install python3-tk
+   ```
+Posteriormente seguir estos pasos:
 
 1. Guarda el archivo `Proyecto 2.py` en tu directorio local.
 2. Abre una terminal o línea de comandos.
